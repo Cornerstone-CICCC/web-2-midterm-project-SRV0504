@@ -1,3 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/rsnzS7iF)
 # Web 2 - Midterm: Movie Web App
 
 **Goal:** Design and build a movie website app where it displays the trending movies and TV series of the day. The website should also include a search bar that the user can use to search for a title.
