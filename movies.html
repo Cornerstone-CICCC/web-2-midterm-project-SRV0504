@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <main class="main-content">
+        <section class="hero" id="hero">
+            <button class="hero__arrow hero__arrow--left" id="prevBtn" aria-label="Previous">❮</button>
+          
+            <div class="hero__content">
+              <div class="hero__meta">
+                <span class="tag">14+</span>
+                <span class="sep">•</span>
+                <span class="tag">Action</span>
+                <span class="tag">Adventure</span>
+              </div>
+          
+              <h1 class="hero__title" id="mainTitle">Title</h1>
+              <p class="hero__overview" id="mainOverview">Sinopsis</p>
+          
+              <div class="hero__actions">
+                <button class="btn btn--primary" id="playBtn">▶ Start watching</button>
+                <button class="btn btn--ghost" id="saveBtn">🔖</button>
+              </div>
+            </div>
+          
+            <button class="hero__arrow hero__arrow--right" id="nextBtn" aria-label="Next">❯</button>
+          </section>
+          
+          
+          <section class="genres">
+            <h3>Genres</h3>
+            <div class="genre-list" id="genreList"></div>
+          </section>
+          
+          <section class="movies-section">
+            <h3>Top Rated</h3>
+            <div class="movie-grid" id="topRated"></div>
+          </section>
+          
+          <section class="movies-section">
+            <h3>New Releases</h3>
+            <div class="movie-grid" id="newReleases"></div>
+          </section>
+          
+          <section class="movies-section">
+            <h3>Now Playing</h3>
+            <div class="movie-grid" id="nowPlaying"></div>
+          </section>
+          
+      </main>
+      <script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+# Node modules
+node_modules/
+
+# Dependencias temporales
+.pnpm-debug.log
+yarn.lock
+package-lock.json
+
+# Archivos de compilación de SASS
+*.css.map
+*.sass.map
+*.scss.map
+
+# Archivos generados
+/dist
+/build
+
+# Configuración local
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
