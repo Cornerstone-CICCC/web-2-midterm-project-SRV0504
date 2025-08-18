@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+  
     <main class="main-content">
         <section class="hero" id="hero">
             <button class="hero__arrow hero__arrow--left" id="prevBtn" aria-label="Previous">❮</button>
@@ -24,35 +25,37 @@
           
               <div class="hero__actions">
                 <button class="btn btn--primary" id="playBtn">▶ Start watching</button>
-                <button class="btn btn--ghost" id="saveBtn">🔖</button>
               </div>
             </div>
           
             <button class="hero__arrow hero__arrow--right" id="nextBtn" aria-label="Next">❯</button>
           </section>
           
+          <section id="topRatedSection" class="media-section">
+            <h3 class="media-title">Top Rated</h3>
           
-          <section class="genres">
-            <h3>Genres</h3>
-            <div class="genre-list" id="genreList"></div>
+            <!-- este div hace el scroll horizontal -->
+            <div class="row-scroll">
+              <div class="movie-grid" id="topRated"></div>
+            </div>
           </section>
           
-          <section class="movies-section">
-            <h3>Top Rated</h3>
-            <div class="movie-grid" id="topRated"></div>
+          <section id="newReleasesSection" class="media-section">
+            <h3 class="media-title">New Releases</h3>
+            <div class="row-scroll">
+              <div class="movie-grid" id="newReleases"></div>
+            </div>
           </section>
           
-          <section class="movies-section">
-            <h3>New Releases</h3>
-            <div class="movie-grid" id="newReleases"></div>
-          </section>
-          
-          <section class="movies-section">
-            <h3>Now Playing</h3>
-            <div class="movie-grid" id="nowPlaying"></div>
-          </section>
-          
+          <section id="nowPlayingSection" class="media-section">
+            <h3 class="media-title">Now Playing</h3>
+            <div class="row-scroll">
+              <div class="movie-grid" id="nowPlaying"></div>
+            </div>
+          </section> 
       </main>
+      
+      <div id="modalRoot"></div>
       <script src="assets/js/app.js"></script>
 </body>
 </html>

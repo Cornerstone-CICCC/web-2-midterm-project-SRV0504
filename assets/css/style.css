@@ -1,10 +1,4 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #000;
-  color: #e6fffb;
-}
-
+@charset "UTF-8";
 h3 {
   text-align: center;
   margin: 12px 0;
@@ -12,10 +6,11 @@ h3 {
 
 .hero {
   position: relative;
-  min-height: 65vh;
-  width: 100%;
-  border-radius: 16px;
+  margin-inline: calc(50% - 50vw);
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
+  border-radius: 0;
   background: #0b0f1a center/cover no-repeat;
 }
 .hero::before {
@@ -23,14 +18,22 @@ h3 {
   position: absolute;
   inset: 0;
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.65) 45%, rgba(0, 0, 0, 0.35) 70%, rgba(0, 0, 0, 0) 100%);
+  pointer-events: none;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0.85) 100%);
+  pointer-events: none;
 }
 .hero__content {
-  position: relative;
+  position: absolute;
   z-index: 1;
+  left: clamp(12px, 6vw, 64px);
+  bottom: clamp(48px, 10vh, 18vh);
   max-width: 560px;
-  padding: 28px 24px;
-  margin-left: clamp(12px, 6vw, 64px);
-  margin-top: clamp(16px, 8vh, 96px);
+  padding-right: 24px;
 }
 .hero__meta {
   display: flex;
@@ -83,7 +86,7 @@ h3 {
 .hero__arrow {
   position: absolute;
   top: 50%;
-  translate: 0 -50%;
+  transform: translateY(-50%);
   width: 44px;
   height: 44px;
   display: grid;
@@ -95,18 +98,20 @@ h3 {
   cursor: pointer;
 }
 .hero__arrow--left {
-  left: 12px;
+  left: 18px;
 }
 .hero__arrow--right {
-  right: 12px;
+  right: 18px;
 }
 
 @media (max-width: 680px) {
   .hero {
-    min-height: 56vh;
+    height: 80vh;
   }
   .hero__content {
-    margin: 32px 16px 16px;
+    left: 16px;
+    right: 16px;
+    bottom: 14vh;
   }
   .hero__overview {
     font-size: 14px;
@@ -152,6 +157,54 @@ h3 {
   margin: 0;
   font-size: 12px;
   color: #14b8a6;
+}
+
+/* sección a pantalla completa (como dejaste antes) */
+.media-section {
+  margin-inline: calc(50% - 50vw);
+  width: 100vw;
+  padding: 16px 0;
+}
+
+/* título arriba-izquierda, sin moverse cuando se hace scroll */
+.media-title {
+  margin: 0 0 12px;
+  padding: 0 20px;
+  text-align: left;
+  /* opcional: quita cualquier estilo que le pusimos antes */
+  background: transparent;
+  border: 0;
+}
+
+/* SOLO este contenedor scrollea en X */
+.row-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 12px; /* que no se corte el borde/sombra */
+}
+
+/* fila en una sola línea */
+.row-scroll .movie-grid {
+  display: inline-flex;
+  gap: 16px;
+  padding: 0 20px;
+}
+
+/* tarjetas (30% más grandes + borde verde) */
+.row-scroll .card {
+  flex: 0 0 auto;
+  width: 195px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 0.5px outset #14b8a6;
+}
+
+.row-scroll .card__poster {
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  display: block;
 }
 
 body {
