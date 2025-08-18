@@ -1,5 +1,7 @@
 @use 'partials/movies';
+@use 'partials/header';
 
+* { box-sizing: border-box; }
 
 body {
     margin: 0;
@@ -8,4 +10,7 @@ body {
     background-color: #000; 
     color: white;           
   }
-  
+
+
+
+
