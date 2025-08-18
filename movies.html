@@ -5,20 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 <body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav">
+        <ul class="nav__pill">
+          <li class="nav__brand">
+            <a href="movies.html" class="nav__logo">
+              <img src="assets/images/logo.png" alt="FlickTime">
+            </a>
+          </li>
+  
+          <li><a class="nav__link is-active" href="movies.html"><i class="fa-solid fa-film"></i> Movies</a></li>
+          <li><a class="nav__link" href="tv.html"><i class="fa-solid fa-tv"></i> TV Shows</a></li>
+          <li><a class="nav__link" href="about.html"><i class="fa-solid fa-circle-info"></i> About</a></li>
+  
+          <li class="nav__spacer"></li>
+  
+          <li>
+            <button class="nav__search js-open-search" aria-label="Search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </li>
+  
+          <li class="nav__searchbox">
+            <form id="navSearchForm" role="search" autocomplete="off">
+              <input id="searchInput" type="search" placeholder="Search..." aria-label="Search"/>
+              <button type="button" class="nav__search nav__search--close js-close-search" aria-label="Close">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </form>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+
+  <section id="searchSection" class="media-section" hidden>
+    <h3 class="media-title">Results</h3>
+    <div class="row-scroll">
+      <div class="movie-grid" id="searchResults"></div>
+    </div>
+  </section>
+  
   
     <main class="main-content">
+      <section id="searchResults" class="results-section"></section>
+
         <section class="hero" id="hero">
             <button class="hero__arrow hero__arrow--left" id="prevBtn" aria-label="Previous">❮</button>
           
             <div class="hero__content">
-              <div class="hero__meta">
-                <span class="tag">14+</span>
-                <span class="sep">•</span>
-                <span class="tag">Action</span>
-                <span class="tag">Adventure</span>
-              </div>
           
               <h1 class="hero__title" id="mainTitle">Title</h1>
               <p class="hero__overview" id="mainOverview">Sinopsis</p>
@@ -34,7 +75,6 @@
           <section id="topRatedSection" class="media-section">
             <h3 class="media-title">Top Rated</h3>
           
-            <!-- este div hace el scroll horizontal -->
             <div class="row-scroll">
               <div class="movie-grid" id="topRated"></div>
             </div>
@@ -56,6 +96,23 @@
       </main>
       
       <div id="modalRoot"></div>
+      <script src="assets/js/config.local.js"></script>
       <script src="assets/js/app.js"></script>
+  
+      <footer class="site-footer">
+        <div class="footer-logo">
+          <img src="assets/Images/logo.png" alt="FlickTime Logo">
+          <div class="footer-title">FlickTime</div>
+        </div>
+      
+        <p>© 2024 FlickTime. All rights reserved.</p>
+      
+        <ul class="footer-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">GitHub</a></li>
+          <li><a href="#">Powered by TMDB</a></li>
+        </ul>
+      </footer>  
 </body>
 </html>
