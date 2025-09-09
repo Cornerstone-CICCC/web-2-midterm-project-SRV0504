@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Search • FlickTime</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+</head>
+<body class="page-search">
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav">
+        <ul class="nav__pill">
+          <li class="nav__brand">
+            <a href="movies.html" class="nav__logo">
+              <img src="assets/images/logo.png" alt="FlickTime" />
+            </a>
+          </li>
+
+          <li><a class="nav__link" href="movies.html" data-nav="movies"><i class="fa-solid fa-film"></i> Movies</a></li>
+          <li><a class="nav__link" href="tv.html" data-nav="tv"><i class="fa-solid fa-tv"></i> TV Shows</a></li>
+          <li><a class="nav__link" href="about.html" data-nav="about"><i class="fa-regular fa-circle-question"></i> About</a></li>
+
+          <li class="nav__spacer"></li>
+
+          <!-- Caja de búsqueda activa en esta página -->
+          <li class="nav__searchbox" style="width:280px">
+            <form id="navSearchForm" action="search.html" method="get" role="search" autocomplete="off">
+              <div class="search-container">
+                <input id="searchInput" name="q" type="text" placeholder="Search..." />
+                <button type="submit" class="search-icon" aria-label="Search">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button type="button" class="search-icon search-close js-close-search" aria-label="Clear">
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </div>
+            </form>
+          </li>
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" style="padding-top:96px">
+    <h2 id="searchTitle">Results</h2>
+
+    <div id="searchResults" class="movie-grid"></div>
+
+    <p id="searchEmpty" style="display:none;opacity:.8;margin-top:16px">
+      No results. Try another search.
+    </p>
+    <p id="searchError" style="display:none;color:#ffb4b4;margin-top:16px">
+      Error while searching. Check your API key and network.
+    </p>
+  </main>
+
+  <!-- IMPORTANTE: primero config.local.js, luego search.js -->
+  <script src="assets/js/config.local.js"></script>
+  <script src="assets/js/search.js"></script>
+</body>
+</html>

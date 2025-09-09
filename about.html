@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About - FlickTime</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+          <nav class="nav">
+            <ul class="nav__pill">
+              <li class="nav__brand">
+                <a href="movies.html" class="nav__logo">
+                  <img src="assets/images/logo.png" alt="FlickTime">
+                </a>
+              </li>
+            
+              <li><a class="nav__link is-active" href="movies.html" data-nav="movies"></i> Movies</a></li>
+              <li><a class="nav__link" href="tv.html" data-nav="tv"></i> TV Shows</a></li>
+              <li><a class="nav__link" href="about.html" data-nav="about"></i> About</a></li>
+                <!-- Toggle Modo Claro/Oscuro -->
+                <button class="theme-toggle-nav" id="themeToggleNav" aria-label="Toggle Dark Mode">
+                  <i class="fas fa-moon"></i>
+                  <i class="fas fa-sun"></i>
+                </button>
+                
+      
+              
+            
+              <li class="nav__spacer"></li>
+            
+              <!-- Botón de abrir la barra -->
+              <li>
+                <button class="nav__search js-open-search" aria-label="Search">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </li>
+            
+              <!-- Caja de búsqueda -->
+              <li class="nav__searchbox">
+                <form id="navSearchForm" action="search.html" class="search-container" autocomplete="off">
+                  <input id="searchInput" name="q" type="search" placeholder="Search..." autocomplete="off" />
+                  <button type="button" class="search-icon search-close js-close-search" aria-label="Close">
+                    <i class="fa-solid fa-xmark"></i>
+                  </button>
+                </form>
+              </li>
+            </ul>
+            
+          </nav>
+        </div>
+      </header>
+
+      <section class="about-section">
+        <div class="about-text">
+          <h2>About</h2>
+          <p>FlickTime is your ultimate gateway to the world of cinema and television. Built using the TMDB API, this platform curates trending and popular movies in real time — delivering an experience that’s both visually immersive and dynamically updated.</p>
+          <p>This project was designed not only to showcase development skills in JavaScript, HTML, and API integration — but also to demonstrate how design and functionality can come together in one seamless cinematic experience.</p>
+        </div>
+        <div id="aboutPosters" class="about-posters"></div>
+      </section>
+      
+      
+      <script>
+        const API_KEY = "188356d0963bdb52332917e32d378c70"
+        const TMDB = "https://api.themoviedb.org/3";
+        const withKey = (path) =>
+          `${TMDB}${path}${path.includes("?") ? "&" : "?"}api_key=${API_KEY}&language=en-US`;
+      
+        const imgUrl = (p) =>
+          p ? `https://image.tmdb.org/t/p/w500${p}` : "https://via.placeholder.com/500x750?text=No+Image";
+      
+        async function loadAboutPosters() {
+          try {
+            const res = await fetch(withKey("/movie/popular?page=1"));
+            const data = await res.json();
+            const container = document.getElementById("aboutPosters");
+            container.innerHTML = data.results.slice(0, 15).map(movie => {
+              return `<img src="${imgUrl(movie.poster_path)}" alt="${movie.title || 'Untitled'} poster">`;
+            }).join("");
+          } catch (e) {
+            console.error("Error loading about posters:", e);
+          }
+        }
+      
+        document.addEventListener("DOMContentLoaded", loadAboutPosters);
+      </script>
+
+
+<footer class="site-footer">
+    <div class="footer-logo">
+      <img src="assets/Images/logo.png" alt="FlickTime Logo" />
+      <div class="footer-title">FlickTime</div>
+    </div>
+    <p>© 2024 FlickTime. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">GitHub</a></li>
+      <li><a href="#">Powered by TMDB</a></li>
+    </ul>
+  </footer>
+      
+       
+  
+  
+</body>
+</html>

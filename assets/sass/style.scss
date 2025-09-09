@@ -9,15 +9,103 @@
     box-sizing: inherit;
   }
   
-  body {
-    margin: 0;
-    padding: 0;
-    background-color: #000; 
-    color: #e6fffb;         
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Arial, sans-serif;
-    line-height: 1.5;
+ /***********************
+ *  THEME COLORS
+ ***********************/
+body.dark-mode {
+  background-color: #0d0f1a;
+  color: #ffffff;
+
+  .site-header {
+    background-color: #0f111f;
   }
-  
+
+  .nav__pill {
+    background-color: #0f111f;
+  }
+
+  .card {
+    background-color: #1a1c2c;
+    color: #fff;
+  }
+
+  .card__meta {
+    color: #ccc;
+  }
+
+  .theme-toggle-nav {
+    background-color: #fff;
+    color: #000;
+  }
+
+  .nav__link {
+    color: #ccc;
+
+    &.is-active {
+      color: #fff;
+    }
+  }
+
+  .nav__searchbox input {
+    background-color: #1e1f2f;
+    color: #fff;
+    border: 1px solid #555;
+  }
+
+  .genre {
+    background-color: #222;
+    color: #eee;
+  }
+}
+
+body.light-mode {
+  background-color: #f3f3f3;
+  color: #111;
+
+  .site-header {
+    background-color: #ffffff;
+  }
+
+  .nav__pill {
+    background-color: #ffffff;
+  }
+
+  .card {
+    background-color: #fff;
+    color: #111;
+  }
+
+  .card__meta {
+    color: #555;
+  }
+
+  .theme-toggle-nav {
+    background-color: #000;
+    color: #fff;
+  }
+
+  .nav__link {
+    color: #444;
+
+    &.is-active {
+      color: #000;
+    }
+  }
+
+  .nav__searchbox input {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #ccc;
+  }
+
+  .genre {
+    background-color: #ddd;
+    color: #222;
+  }
+}
+
+
+
 
 
 
